@@ -69,16 +69,16 @@ export default function Login() {
         {error && <Text className="text-red-500 mb-2">{error}</Text>}
 
         <TouchableOpacity className="self-end mb-6">
-          <Text className="text-blue-600">Forgot password?</Text>
+          <Text className="text-purple-700">Forgot password?</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={handleLogin} className="bg-black py-4 rounded-lg">
+        <TouchableOpacity onPress={handleLogin} className="bg-purple-700 py-4 rounded-lg">
           <Text className="text-center text-white text-lg font-semibold">Login</Text>
         </TouchableOpacity>
 
         <TouchableOpacity className="flex-row items-center justify-center gap-2 my-5">
           <Text>Doesn&apos;t have any account?</Text>
-          <Link href="/signup" className="border-b-2 text-blue-600 font-medium">
+          <Link href="/signup" className="border-b-2 text-purple-700 font-medium">
             Signup
           </Link>
         </TouchableOpacity>

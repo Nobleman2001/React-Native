@@ -7,6 +7,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import EvilIcons from '@expo/vector-icons/EvilIcons';
 import Discount from '../../components/ui/Discount'
 import Learning from '../../components/ui/Learning'
+import Recommend from '../../components/ui/Recommend';
 
 export default function HomeScreen() {
   const navigationRef = useNavigationContainerRef();
@@ -54,6 +55,9 @@ export default function HomeScreen() {
 
       {/* Learning progress section */}
       <Learning/>
+
+      {/* Recommend section */}
+      <Recommend/>
     </SafeAreaView>
   );
 }

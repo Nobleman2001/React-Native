@@ -14,6 +14,7 @@ export default function RootLayout() {
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
         <Drawer screenOptions={{ headerShown: false }}>
           <Drawer.Screen name="(tabs)" />
+          <Drawer.Screen name="dashboard"/>
         </Drawer>
 
         <StatusBar style="auto" />

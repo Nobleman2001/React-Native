@@ -3,6 +3,7 @@ import { IconSymbol } from "@/components/ui/icon-symbol";
 import { Colors } from "@/constants/theme";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import { AuthContext } from "@/lib/authContext";
+import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { Tabs } from "expo-router";
@@ -34,6 +35,15 @@ export default function TabLayout() {
         options={{
           title: "Explore",
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+        }}
+      />
+
+      {/* Create Course Tab */}
+      <Tabs.Screen
+        name="createcourse"
+        options={{
+          title: "Create",
+          tabBarIcon: ({ color }) => <AntDesign name="plus" size={24} color="black" />,
         }}
       />
       <Tabs.Screen

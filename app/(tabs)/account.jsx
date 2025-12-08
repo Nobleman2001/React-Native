@@ -290,6 +290,12 @@ export default function Account() {
           </View>
         </View>
 
+        <View className='mx-5 my-5'>
+          <TouchableOpacity>
+            <Text onPress={()=>router.replace('/dashboard')} className='text-lg font-bold '>Dashboard</Text>
+          </TouchableOpacity>
+        </View>
+
         {/* Logout */}
         <View className="px-5 mt-8 mb-8">
           <TouchableOpacity onPress={handleLogout} className="bg-red-500 py-4 rounded-lg items-center">

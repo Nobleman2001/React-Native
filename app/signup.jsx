@@ -67,13 +67,13 @@ export default function SignUp() {
         </View>
         {error && <Text className="text-red-700">{error}</Text>}
 
-        <TouchableOpacity onPress={handleLogin} className="bg-black py-4 rounded-lg mt-5">
+        <TouchableOpacity onPress={handleLogin} className="bg-purple-700 py-4 rounded-lg mt-5">
           <Text className="text-center text-white text-lg font-semibold">Signup</Text>
         </TouchableOpacity>
 
         <TouchableOpacity className="flex-row items-center gap-2 justify-center my-5">
           <Text className="text-center ">Already Have Account? </Text>
-          <Link href="/login" className="border-b-2 text-blue-600 font-medium">
+          <Link href="/login" className="border-b-2 text-purple-700-600 font-medium">
             Login
           </Link>
         </TouchableOpacity>
