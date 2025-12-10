@@ -1,6 +1,7 @@
+import { AuthContext } from "@/lib/authContext";
 import Feather from "@expo/vector-icons/Feather";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ActivityIndicator, Alert, RefreshControl, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { getAllCourses } from "../../lib/appwriteServices";
@@ -9,6 +10,7 @@ export default function TabTwoScreen() {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const { setCartItems } = useContext(AuthContext);
 
   // Fetch courses on component mount
   useEffect(() => {
@@ -162,9 +164,10 @@ export default function TabTwoScreen() {
 
                     {/* CTA Button */}
                     <TouchableOpacity
+                      onPress={() => setCartItems((prev) => [...prev, course])}
                       className="bg-purple-600 mt-5 py-4 rounded-2xl items-center justify-center shadow-lg"
                       activeOpacity={0.8}>
-                      <Text className="text-white font-bold text-base">Start Learning →</Text>
+                      <Text className="text-white font-bold text-base">Add to Cart →</Text>
                     </TouchableOpacity>
                   </View>
                 </TouchableOpacity>

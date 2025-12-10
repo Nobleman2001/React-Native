@@ -5,6 +5,8 @@ import { Drawer } from "expo-router/drawer";
 import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
 import "../global.css";
+import DrawerNavigator from '../components/navigation/DrawerNavigator';
+
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -12,9 +14,18 @@ export default function RootLayout() {
   return (
     <AuthProvider>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Drawer screenOptions={{ headerShown: false }}>
-          <Drawer.Screen name="(tabs)" />
-          <Drawer.Screen name="dashboard"/>
+        <Drawer
+          drawerContent={(props) => <DrawerNavigator {...props} />}
+          screenOptions={{
+            headerShown: false,
+            drawerType: "front",
+            overlayColor: "rgba(0, 0, 0, 0.5)",
+            drawerStyle: {
+              width: 280,
+            },
+          }}>
+          <Drawer.Screen name="(tabs)" options={{ drawerLabel: "Home" }} />
+          <Drawer.Screen name="dashboard" options={{ drawerLabel: "Dashboard" }} />
         </Drawer>
 
         <StatusBar style="auto" />
